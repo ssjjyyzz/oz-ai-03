@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="box">마우스를 올려보세요.</p>
+
+    <script>
+        // mouseover -> 글씨를 orange 색으로 변경
+        // mouseout -> 글씨를 black색으로 변경
+
+        const box = document.querySelector("#box")
+
+        function changeColorToOrange() {
+            box.style.color = "orange";
+            box.style.fontSize = "20px";
+        };
+        function changeColorToBlack() {
+            box.style.color = "black";
+        };
+
+        // function changeColor(color) {
+        //      box.style.color = color;
+        //      consol.log("색상이 변경되었습니다.")
+        //  }; 
+
+        // 이벤트 리스너를 등록할 때, 함수 정의를 동시에 할 수 있음. () => {} , function() {} 화살표 키워드, 일반 함수 모두 람다함수처럼 정의해서 사용 가능.
+        box.addEventListener("mouseover", changeColorToOrange);
+        box.addEventListener("mouseout", changeColorToBlack);
+        // box.addEventListener("mouseout", () => box.styl.color = "black")
+        // box.addEventListener("mouseout", function() {box.styl.color = "black"}
+        // box.addEventListener("mouseout", () => changeColor("Orange"))
+
+        // 결론
+        // 1) () => {}{} 형태를 보면, 함수라고 해석한다.
+        // 2) addEventListener(이벤트, 함수)를 호출할 때, 두번째 인자는 반드시 함수를 전달한다.
+    </script>
+
+</body>
+
+</html>
